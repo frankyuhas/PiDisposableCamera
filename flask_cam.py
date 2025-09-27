@@ -13,6 +13,10 @@ video_config = picam2.create_video_configuration(main={"size": (640, 480)})
 picam2.configure(video_config)
 picam2.start()
 
+picam2.set_controls({"AfMode": 2,"AfTrigger":0})  # Continuous autofocus
+time.sleep(2)  # Allow camera to warm up
+
+
 TEMPLATE = """
 <html>
 <head><title>Raspberry Pi Camera</title></head>
