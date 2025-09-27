@@ -10,6 +10,9 @@ picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
 picam2.start()
 
+picam2.set_controls({"AfMode": 2,"AfTrigger":0})  # Continuous autofocus
+time.sleep(2)  # Allow camera to warm up
+
 # Global JPEG frame storage
 frame = None
 lock = threading.Lock()
