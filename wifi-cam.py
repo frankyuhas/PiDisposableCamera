@@ -6,10 +6,10 @@ import io
 picam2 = Picamera2()
 video_config = picam2.create_video_configuration()
 picam2.configure(video_config)
-picam2.start_preview(Preview.QT)
+#picam2.start_preview(Preview.QT)
 
 # Start an MJPEG HTTP server on port 8000
-#picam2.start_recording(MJPEGEncoder(), FileOutput("server:8000"))
+picam2.start_recording(MJPEGEncoder(), FileOutput("server:8000"))
 
 try:
     print("Camera stream running at http://<raspberrypi-ip>:8000")
