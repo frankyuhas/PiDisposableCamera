@@ -49,7 +49,7 @@ def video_feed():
 
 @app.route('/capture')
 def capture():
-    filename = f"/home/pi/capture_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jpg"
+    filename = f"/home/picamera/capture_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jpg"
     picam2.capture_file(filename)
     return send_file(filename, mimetype='image/jpeg')
 
