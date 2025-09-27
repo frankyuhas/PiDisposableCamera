@@ -14,7 +14,6 @@ picam2.configure(video_config)
 picam2.start()
 
 picam2.set_controls({"AfMode": 2,"AfTrigger":0})  # Continuous autofocus
-time.sleep(2)  # Allow camera to warm up
 
 
 TEMPLATE = """
